@@ -1,0 +1,24 @@
+# Neovim swap and backup files
+*.swp
+*.swo
+*.bak
+*~
+
+# Session files
+Session.vim
+
+# Neovim's netrw history file
+.netrwhist
+
+# Plugin-specific build artifacts or generated files
+# (adjust these based on the plugins you use)
+# For example, if a plugin generates a `dist/` directory:
+# dist/
+
+# Lock files or temporary state files
+# For example, if a plugin creates a lock file:
+# *.lock
+
+# Lua compiled files (if you use a build process that generates .lua from other sources)
+# For example, if you use Fennel and compile to Lua:
+# *.lua
