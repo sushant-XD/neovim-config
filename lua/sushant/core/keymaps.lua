@@ -32,5 +32,18 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 -- file operations
 keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", { desc = "Save file" })
 
+-- insert mode navigation (hjkl movement)
+keymap.set("i", "<A-h>", "<Left>", { desc = "Move left in insert mode" })
+keymap.set("i", "<A-j>", "<Down>", { desc = "Move down in insert mode" })
+keymap.set("i", "<A-k>", "<Up>", { desc = "Move up in insert mode" })
+keymap.set("i", "<A-l>", "<Right>", { desc = "Move right in insert mode" })
+
+-- insert mode word navigation
+keymap.set("i", "<A-b>", "<C-Left>", { desc = "Move word backward in insert mode" })
+keymap.set("i", "<A-w>", "<C-Right>", { desc = "Move word forward in insert mode" })
+
+-- insert mode line navigation  
+keymap.set("i", "<A-$>", "<End>", { desc = "Move to end of line in insert mode" })
+
 -- file explorer
 keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
