@@ -113,6 +113,25 @@ return {
         }
       end
 
+      -- Special settings for clangd (C/C++)
+      if server_name == "clangd" then
+        opts.cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy",
+          "--header-insertion=iwyu",
+          "--completion-style=detailed",
+          "--function-arg-placeholders",
+          "--cross-file-rename",
+        }
+        opts.init_options = {
+          usePlaceholders = true,
+          completeUnimported = true,
+          clangdFileStatus = true,
+        }
+        opts.capabilities.textDocument.completion.completionItem.snippetSupport = true
+      end
+
       lspconfig[server_name].setup(opts)
     end
   end,
