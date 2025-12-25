@@ -123,6 +123,8 @@ return {
           "--completion-style=detailed",
           "--function-arg-placeholders",
           "--cross-file-rename",
+          "--all-scopes-completion",
+          "--pch-storage=memory",
         }
         opts.init_options = {
           usePlaceholders = true,
@@ -130,11 +132,16 @@ return {
           clangdFileStatus = true,
         }
         opts.capabilities.textDocument.completion.completionItem.snippetSupport = true
+        opts.root_dir = function(fname)
+          return require("lspconfig.util").root_pattern(
+            "compile_commands.json",
+            "compile_flags.txt",
+            ".git"
+          )(fname) or vim.fn.getcwd()
+        end
       end
 
       lspconfig[server_name].setup(opts)
     end
   end,
 }
-
-

@@ -30,7 +30,7 @@ keymap.set("n", "<shift><tab>", "<cmd>tabp<CR>", { desc = "Go to previous tab" }
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- file operations
-keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", { desc = "Save file" })
+keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>wa<CR>", { desc = "Save all files" })
 
 -- insert mode navigation (hjkl movement)
 keymap.set("i", "<A-h>", "<Left>", { desc = "Move left in insert mode" })
