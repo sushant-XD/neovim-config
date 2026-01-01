@@ -47,3 +47,9 @@ keymap.set("i", "<A-$>", "<End>", { desc = "Move to end of line in insert mode" 
 
 -- file explorer
 keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+
+-- Tmux Navigation integration
+keymap.set("n","<C-h>", "TmuxNavigateLeft<CR>",{desc = "window left"})
+keymap.set("n","<C-l>", "TmuxNavigateRight<CR>",{desc = "window right"})
+keymap.set("n","<C-j>", "TmuxNavigateDown<CR>",{desc = "window down"})
+keymap.set("n","<C-k>", "TmuxNavigateUp<CR>",{desc = "window up"})
