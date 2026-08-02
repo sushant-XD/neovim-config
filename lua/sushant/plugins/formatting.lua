@@ -6,13 +6,16 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "ruff_format" },
+				javascript = { "biome" },
+				typescript = { "biome" },
+				json = { "biome" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
-				cmake = { "cmake-format" },
 				sh = { "shfmt" },
-
-				lua = { "stylua" },
-				python = { "isort", "black" },
+				cmake = { "gersemi" }, -- Change this line
+				rust = { "rustfmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -27,6 +30,6 @@ return {
 				async = false,
 				timeout_ms = 1000,
 			})
-      end, { desc = "Format file or range (in visual mode)" })
+		end, { desc = "Format file or range (in visual mode)" })
 	end,
 }

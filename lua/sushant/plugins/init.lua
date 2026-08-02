@@ -1,9 +1,9 @@
 return {
 	{
-		"nvim-lua/plenary.nvim", -- Lua functions that many plugins use
+		"nvim-lua/plenary.nvim",
 	},
 	{
-		"christoomey/vim-tmux-navigator", -- tmux & split window navigation
+		"christoomey/vim-tmux-navigator",
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -17,7 +17,7 @@ return {
 
 		"kylechui/nvim-surround",
 		event = { "BufReadPre", "BufNewFile" },
-		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		version = "*",
 		config = true,
 	},
 	{
@@ -31,10 +31,6 @@ return {
 			vim.o.timeout = true
 			vim.o.timeoutlen = 500
 		end,
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
+		opts = {},
 	},
 }
