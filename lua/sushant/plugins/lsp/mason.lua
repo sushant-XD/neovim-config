@@ -5,15 +5,10 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
-		-- import mason
 		local mason = require("mason")
-
-		-- import mason-lspconfig
 		local mason_lspconfig = require("mason-lspconfig")
-
 		local mason_tool_installer = require("mason-tool-installer")
 
-		-- enable mason and configure icons
 		mason.setup({
 			ui = {
 				icons = {
@@ -24,23 +19,30 @@ return {
 			},
 		})
 
+		local lsp_servers = {
+			"lua_ls",
+			"cmake",
+			"bashls",
+			"basedpyright",
+		}
+
+		-- Docker LSP changed names in newer versions
+		if vim.fn.has("nvim-0.11") == 1 then
+			table.insert(lsp_servers, "docker_language_server")
+		else
+			table.insert(lsp_servers, "dockerls")
+		end
+
 		mason_lspconfig.setup({
-			-- list of servers for mason to install
-			ensure_installed = {
-				"lua_ls",
-				"dockerls",
-				"cmake",
-				"bashls",
-				"basedpyright",
-			},
+			ensure_installed = lsp_servers,
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"stylua", -- lua formatter
-				"ruff", -- fuck pyright and black and isort
-				"biome", -- no prettier or eslint_d rust based biome og
-				"gersemi", -- cmake formatter (rust og)
+				"stylua",
+				"ruff",
+				"biome",
+				"gersemi",
 			},
 		})
 	end,
