@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
-keymap.set("i", "jk", "<ESC>", {desc = "Exit insert mode with jk"})
+keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
@@ -24,7 +24,7 @@ keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase w
 
 -- tab management
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
-keymap.set("n", "<leader>x", "<cmd>tabclose<CR>", { desc = "Close current tab" })
+keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
 keymap.set("n", "<tab>", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<shift><tab>", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
@@ -42,7 +42,7 @@ keymap.set("i", "<A-l>", "<Right>", { desc = "Move right in insert mode" })
 keymap.set("i", "<A-b>", "<C-Left>", { desc = "Move word backward in insert mode" })
 keymap.set("i", "<A-w>", "<C-Right>", { desc = "Move word forward in insert mode" })
 
--- insert mode line navigation  
+-- insert mode line navigation
 keymap.set("i", "<A-$>", "<End>", { desc = "Move to end of line in insert mode" })
 
 -- file explorer
@@ -53,3 +53,8 @@ keymap.set("n","<C-h>", "TmuxNavigateLeft<CR>",{desc = "window left"})
 keymap.set("n","<C-l>", "TmuxNavigateRight<CR>",{desc = "window right"})
 keymap.set("n","<C-j>", "TmuxNavigateDown<CR>",{desc = "window down"})
 keymap.set("n","<C-k>", "TmuxNavigateUp<CR>",{desc = "window up"})
+
+-- MD files render
+keymap.set("n", "<leader>mp", "<Plug>(md-render-preview)", { desc = "Markdown preview (toggle)" })
+keymap.set("n", "<leader>mt", "<Plug>(md-render-preview-tab)", { desc = "Markdown preview in tab (toggle)" })
+keymap.set("n", "<leader>md", "<Plug>(md-render-demo)", { desc = "Markdown render demo" })
